@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] int health = 500;
-    [SerializeField] GameObject hitVFX;
+    [SerializeField] private int health = 500;
+    [SerializeField] private GameObject hitVFX;
+
+    [Header("Camera Shake")]
+    [SerializeField] private bool hasCameraShake;
+    [SerializeField] private Camera main;
+
+    CameraShake cameraShake;
+
+    private void Awake() {
+        if (main != null)
+            cameraShake = main.GetComponent<CameraShake>();
+    }
 
     //----BEING HIT----//
     //process hit 
@@ -22,6 +33,9 @@ public class Health : MonoBehaviour
             //destroy player if health <= 0
             Destroy(this.gameObject);
         }
+
+        if (hasCameraShake && main!=null)
+            cameraShake.Play();
     }
 
     //hit effect

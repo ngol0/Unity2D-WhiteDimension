@@ -228,4 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
-  hitVFX: {fileID: 0}
+  hitVFX: {fileID: 648521681536157276, guid: b93868caf69f949e1b801a67b528a167, type: 3}
+  hasCameraShake: 1
+  main: {fileID: 0}
