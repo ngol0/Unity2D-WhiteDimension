@@ -22,7 +22,6 @@ public class Health : MonoBehaviour
     //process hit 
     public void ProcessHit(DamageDealer damage)
     {
-        DisplayHitAffect();
         health -= damage.Damage;
 
         //destroy bullet
@@ -30,7 +29,7 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-            //destroy player if health <= 0
+            DisplayHitAffect();
             Destroy(this.gameObject);
         }
 

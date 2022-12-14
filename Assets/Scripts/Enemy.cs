@@ -16,6 +16,9 @@ public class Enemy : MonoBehaviour
     // cache ref
     SpriteRenderer spriteR;
 
+    // for shooting
+    public static bool wasShot = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +37,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CountDownAndShoot();
+        if (wasShot) CountDownAndShoot();
     }
     
     //----SHOOTING----//
@@ -105,7 +108,9 @@ public class Enemy : MonoBehaviour
                 animator.SetBool("isHit", true);
                 StartCoroutine(ResetTarget());
                 active = false;
-            }           
+            }  
+
+            wasShot = true;         
         }      
     }
 
