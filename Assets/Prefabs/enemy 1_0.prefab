@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 407907198125173640, guid: df7ca221dcc924b2cbe6571a4387e8fe, type: 3}
+  m_Sprite: {fileID: 9113828207941670614, guid: 931ab972a8d87eb4281d42bd77dbe851, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,3 +224,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 500
   hitVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  hasCameraShake: 0
+  main: {fileID: 0}

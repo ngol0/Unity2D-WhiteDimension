@@ -13,7 +13,8 @@ public class Health : MonoBehaviour
 
     CameraShake cameraShake;
 
-    private void Awake() {
+    private void Awake()
+    {
         if (main != null)
             cameraShake = main.GetComponent<CameraShake>();
     }
@@ -22,7 +23,6 @@ public class Health : MonoBehaviour
     //process hit 
     public void ProcessHit(DamageDealer damage)
     {
-        DisplayHitAffect();
         health -= damage.Damage;
 
         //destroy bullet
@@ -30,12 +30,15 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
+            DisplayHitAffect();
             //destroy player if health <= 0
             Destroy(this.gameObject);
         }
 
-        if (hasCameraShake && main!=null)
+        if (hasCameraShake && main != null)
+        {
             cameraShake.Play();
+        }
     }
 
     //hit effect

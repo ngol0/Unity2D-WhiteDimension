@@ -16,10 +16,11 @@ public class WaveConfig : ScriptableObject
     [field: SerializeField] public int numberOfEnemies { get; private set; } = 5;
     [field: SerializeField] public float moveSpeed { get; private set; } = 2f;
 
+    List<Transform> waveWaypoints = new List<Transform>();
+
     // Getting all the waypoints
     public List<Transform> GetWaypoints()
     {
-        var waveWaypoints = new List<Transform>();
         foreach(Transform wayPoint in PathPrefab.transform)
         {
             waveWaypoints.Add(wayPoint);

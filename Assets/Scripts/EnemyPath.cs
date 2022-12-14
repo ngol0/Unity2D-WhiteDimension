@@ -6,9 +6,10 @@ public class EnemyPath : MonoBehaviour
 {
     // variable
     WaveConfig waveConfig;
-    List<Transform> waypoints;
+    List<Transform> waypoints = new List<Transform>();
 
     int wayPointIndex = 0;
+    bool isMoving = false;
 
 
     // properties
@@ -16,11 +17,14 @@ public class EnemyPath : MonoBehaviour
 
     // Get the waypoints 
     void Start()
-    { 
-        waypoints = waveConfig.GetWaypoints();
+    {
+        foreach (var waypoint in waveConfig.GetWaypoints())
+        {
+            waypoints.Add(waypoint);
+        }
     }
 
-  
+
     void Update()
     {
         MoveEnemy();
@@ -29,7 +33,13 @@ public class EnemyPath : MonoBehaviour
 
     public void SetWaveConfig(WaveConfig waveToUse)
     {
+        Debug.Log(":::calling wave config");
         this.waveConfig = waveToUse;
+        waypoints.Clear();
+        foreach (var waypoint in waveConfig.GetWaypoints())
+        {
+            waypoints.Add(waypoint);
+        }
     }
 
     // move enemy
@@ -49,7 +59,8 @@ public class EnemyPath : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Debug.Log("Reusing:::");
         }
     }
 }

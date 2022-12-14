@@ -16,6 +16,9 @@ public class Enemy : MonoBehaviour
     // cache ref
     SpriteRenderer spriteR;
 
+    //for shooting condition
+    bool hasBeenShot = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +37,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CountDownAndShoot();
+        if (hasBeenShot) CountDownAndShoot();
     }
     
     //----SHOOTING----//
@@ -105,7 +108,9 @@ public class Enemy : MonoBehaviour
                 animator.SetBool("isHit", true);
                 StartCoroutine(ResetTarget());
                 active = false;
-            }           
+            }
+
+            hasBeenShot = true;
         }      
     }
 
@@ -115,7 +120,5 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         animator.SetBool("isHit", false);
         active = true;
-
     }
-
 }
