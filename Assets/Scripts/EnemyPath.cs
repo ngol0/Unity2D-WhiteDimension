@@ -40,6 +40,9 @@ public class EnemyPath : MonoBehaviour
         {
             waypoints.Add(waypoint);
         }
+        transform.position = waypoints[0].transform.position;
+
+        gameObject.SetActive(true);
     }
 
     // move enemy
@@ -61,6 +64,7 @@ public class EnemyPath : MonoBehaviour
         {
             gameObject.SetActive(false);
             Debug.Log("Reusing:::");
+            transform.position = waypoints[0].transform.position;
         }
     }
 }
