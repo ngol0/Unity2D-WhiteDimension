@@ -9,40 +9,31 @@ public class EnemyPath : MonoBehaviour
     List<Transform> waypoints = new List<Transform>();
 
     int wayPointIndex = 0;
-    bool isMoving = false;
-
-
-    // properties
-
-
-    // Get the waypoints 
-    void Start()
-    {
-        foreach (var waypoint in waveConfig.GetWaypoints())
-        {
-            waypoints.Add(waypoint);
-        }
-    }
-
+    bool isMoving;
 
     void Update()
     {
-        MoveEnemy();
+        if (isMoving) MoveEnemy();
     }
-
 
     public void SetWaveConfig(WaveConfig waveToUse)
     {
-        Debug.Log(":::calling wave config");
         this.waveConfig = waveToUse;
-        waypoints.Clear();
-        foreach (var waypoint in waveConfig.GetWaypoints())
-        {
-            waypoints.Add(waypoint);
-        }
-        transform.position = waypoints[0].transform.position;
+        waypoints = waveConfig.GetWaypoints();
+        ReturnToStart();
+        isMoving = true;
+        if (isMoving) SetEnemyActive();
+    }
 
+    public void SetEnemyActive()
+    {
+        Debug.Log(":::set enemy active");
         gameObject.SetActive(true);
+    }
+
+    public void ReturnToStart()
+    {
+        transform.position = waypoints[0].transform.position;
     }
 
     // move enemy
@@ -59,12 +50,6 @@ public class EnemyPath : MonoBehaviour
             {
                 wayPointIndex++;
             }
-        }
-        else
-        {
-            gameObject.SetActive(false);
-            Debug.Log("Reusing:::");
-            transform.position = waypoints[0].transform.position;
         }
     }
 }

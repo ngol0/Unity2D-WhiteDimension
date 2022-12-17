@@ -35,15 +35,13 @@ public class EnemySpawner : MonoBehaviour
             //     Quaternion.identity, transform);
 
             var newEnemy = ObjectPool.SharedInstance.GetPooledEnemy();
-            // if (newEnemy != null)
-            // {
-            //     //newEnemy.transform.position = wave.GetWaypoints()[startingIndex].transform.position;
-            //     //newEnemy.transform.rotation = Quaternion.identity;
-            //     newEnemy.SetActive(true);
-            // }
-            //set the wave to the enemy that gets spawn so that it knows which wave to follow
-            newEnemy.GetComponent<EnemyPath>().SetWaveConfig(wave);
-
+            if (newEnemy != null)
+            {
+                //newEnemy.transform.position = wave.GetWaypoints()[startingIndex].transform.position;
+                //newEnemy.transform.rotation = Quaternion.identity;
+                var enemyPath = newEnemy.GetComponent<EnemyPath>();
+                enemyPath.SetWaveConfig(wave); //set the wave to the enemy that gets spawn so that it knows which wave to follow
+            }
             yield return new WaitForSeconds(wave.GetRandomSpawnTime());
         }
     }

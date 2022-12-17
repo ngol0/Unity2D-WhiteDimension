@@ -106,7 +106,7 @@ public class Enemy : MonoBehaviour
             if (active == true)
             {
                 animator.SetBool("isHit", true);
-                StartCoroutine(ResetTarget());
+                //StartCoroutine(ResetTarget());
                 active = false;
             }
 

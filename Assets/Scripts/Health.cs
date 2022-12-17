@@ -32,7 +32,8 @@ public class Health : MonoBehaviour
         {
             DisplayHitAffect();
             //destroy player if health <= 0
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
 
         if (hasCameraShake && main != null)
