@@ -49,12 +49,12 @@ public class Enemy : MonoBehaviour
         //shoot
         if (shotCounter <= 0f)
         {
-            Fire();
+            StartCoroutine(Fire());
             shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
         }
     }
 
-    private void Fire()
+    private IEnumerator Fire()
     {
         float paddingX = 3*(spriteR.bounds.extents.x)/4;
         float paddingY = 3*(spriteR.bounds.extents.y)/4;
@@ -62,7 +62,6 @@ public class Enemy : MonoBehaviour
 
         //laser from the right
         Vector3 positionRight = new Vector3(transform.position.x + paddingX, transform.position.y - paddingY, transform.position.z);
-        //GameObject laserCloneRight = Instantiate(laserPrefabs, positionRight, Quaternion.identity) as GameObject;
         GameObject laserCloneRight = ObjectPool.SharedInstance.GetPooledLaser();
 
         if (laserCloneRight != null)
@@ -72,10 +71,10 @@ public class Enemy : MonoBehaviour
             laserCloneRight.SetActive(true);
         }
 
+        yield return new WaitForSeconds(0.05f);
 
         //laser from left
         Vector3 positionLeft = new Vector3(transform.position.x - paddingX, transform.position.y - paddingY, transform.position.z);
-        //GameObject laserCloneLeft = Instantiate(laserPrefabs, positionLeft, Quaternion.identity) as GameObject;
         GameObject laserCloneLeft = ObjectPool.SharedInstance.GetPooledLaser();
         if (laserCloneLeft != null)
         {
@@ -101,7 +100,7 @@ public class Enemy : MonoBehaviour
             if (health)
             {
                 health.ProcessHit(damageDealer);
-                health.OnEnemyDie += OnScore;
+                health.OnDie += OnScore;
             }
 
             if (active == true)
@@ -117,7 +116,7 @@ public class Enemy : MonoBehaviour
 
     private void OnScore()
     {
-
+        GameManager.Instance.OnGetScore();
     }
 
     // restart animation after hit

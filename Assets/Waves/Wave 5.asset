@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Wave 5
   m_EditorClassIdentifier: 
   <EnemyPrefab>k__BackingField: {fileID: 7792450591583216164, guid: cda66b384dcb0401d93cbc1b45106f51, type: 3}
-  <PathPrefab>k__BackingField: {fileID: 8541200260427851178, guid: b63caf6450b901c4fa1977e8f153a4f1, type: 3}
+  <PathPrefab>k__BackingField: {fileID: 7374386912013105099, guid: 3f1f7ac0fbe930743a74e31d7b48a566, type: 3}
   <timeBetweenSpawns>k__BackingField: 1
   <spawnRandomFactor>k__BackingField: 0.5
   <minSpawnTime>k__BackingField: 0.2
-  <numberOfEnemies>k__BackingField: 10
-  <moveSpeed>k__BackingField: 2.5
+  <numberOfEnemies>k__BackingField: 15
+  <moveSpeed>k__BackingField: 3

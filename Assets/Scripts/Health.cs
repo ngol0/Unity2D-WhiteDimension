@@ -11,12 +11,19 @@ public class Health : MonoBehaviour
     [SerializeField] private bool hasCameraShake;
     [SerializeField] private Camera main;
 
-    CameraShake cameraShake;
-    public System.Action OnEnemyDie;
+    [Header("UI")]
+    [SerializeField] UIHeart playerHeart;
 
-    private void Awake() {
+    CameraShake cameraShake;
+    public System.Action OnDie;
+
+    private void Awake()
+    {
         if (main != null)
+        {
             cameraShake = main.GetComponent<CameraShake>();
+            playerHeart.SetNumberOfHeart(health);
+        }
     }
 
     //----BEING HIT----//
@@ -24,6 +31,7 @@ public class Health : MonoBehaviour
     public void ProcessHit(DamageDealer damage)
     {
         health -= damage.Damage;
+        Debug.Log(health);
 
         //destroy bullet
         damage.Hit();
@@ -32,11 +40,14 @@ public class Health : MonoBehaviour
         {
             DisplayHitAffect();
             Destroy(this.gameObject);
-            OnEnemyDie?.Invoke();
+            OnDie?.Invoke();
         }
 
-        if (hasCameraShake && main!=null)
+        if (hasCameraShake && main != null)
+        {
             cameraShake.Play();
+            playerHeart.OnHeartLost(health);
+        }
     }
 
     //hit effect
@@ -45,3 +56,4 @@ public class Health : MonoBehaviour
         GameObject hitEffect = Instantiate(hitVFX, transform.position, Quaternion.identity);
     }
 }
+

@@ -11,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] List<WaveConfig> waveConfigOfSpawn;
     [SerializeField] bool looping = false; // looping after all waves are done
 
+    [SerializeField] float timeBetweenWaves = 12f;
+
     IEnumerator Start()
     {
         do
@@ -51,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
 
             //wait for one wave to terminate til the next wave
             yield return StartCoroutine(SpawnEnemy(currentWave));
-            yield return new WaitForSeconds(12f);
+            yield return new WaitForSeconds(timeBetweenWaves);
  
         }
         

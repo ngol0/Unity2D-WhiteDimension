@@ -130,9 +130,14 @@ public class Player : MonoBehaviour
             if (health)
             {
                 health.ProcessHit(damage);
+                health.OnDie += OnPlayerDie;
             }
         }      
+    }
 
+    private void OnPlayerDie()
+    {
+        GameManager.Instance.OnLoseGame();
     }
 }
 
