@@ -273,6 +273,8 @@ MonoBehaviour:
   startingIndex: 0
   waveConfigOfSpawn:
   - {fileID: 11400000, guid: f53d5da1a4df74d74a0a3e67658a2020, type: 2}
+  - {fileID: 11400000, guid: 3607704780910f047be26f5175b2208a, type: 2}
+  - {fileID: 11400000, guid: 7cd6d116736cada4f9e5fd2252d55616, type: 2}
   looping: 1
 --- !u!4 &2034555000
 Transform:
@@ -459,6 +461,10 @@ PrefabInstance:
       propertyPath: main
       value: 
       objectReference: {fileID: 2133408903}
+    - target: {fileID: 6717154039494398635, guid: 28f1c7beb808644f0b5a1ec4bd42deba, type: 3}
+      propertyPath: health
+      value: 1000000
+      objectReference: {fileID: 0}
     - target: {fileID: 7204643023306572028, guid: 28f1c7beb808644f0b5a1ec4bd42deba, type: 3}
       propertyPath: m_RootOrder
       value: 2

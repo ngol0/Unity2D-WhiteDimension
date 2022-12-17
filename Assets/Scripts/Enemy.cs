@@ -101,6 +101,7 @@ public class Enemy : MonoBehaviour
             if (health)
             {
                 health.ProcessHit(damageDealer);
+                health.OnEnemyDie += OnScore;
             }
 
             if (active == true)
@@ -112,6 +113,11 @@ public class Enemy : MonoBehaviour
 
             wasShot = true;         
         }      
+    }
+
+    private void OnScore()
+    {
+
     }
 
     // restart animation after hit

@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Camera main;
 
     CameraShake cameraShake;
+    public System.Action OnEnemyDie;
 
     private void Awake() {
         if (main != null)
@@ -31,6 +32,7 @@ public class Health : MonoBehaviour
         {
             DisplayHitAffect();
             Destroy(this.gameObject);
+            OnEnemyDie?.Invoke();
         }
 
         if (hasCameraShake && main!=null)

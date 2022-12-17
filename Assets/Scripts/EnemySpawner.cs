@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
 
             //wait for one wave to terminate til the next wave
             yield return StartCoroutine(SpawnEnemy(currentWave));
-
+            yield return new WaitForSeconds(12f);
  
         }
         
