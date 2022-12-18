@@ -184,6 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af64e18d8c0f1ba43a87a68f8906df9b, type: 3}
+--- !u!1 &298992455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2287277637190076164, guid: af64e18d8c0f1ba43a87a68f8906df9b, type: 3}
+  m_PrefabInstance: {fileID: 191828935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &557259971
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSlider: {fileID: 1324685908}
-  percentOfScore: 0.03
+  starfield: {fileID: 298992455}
+  percentOfScore: 0.02
+  enemyStartShooting: 0
 --- !u!1 &1543219947
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +877,7 @@ PrefabInstance:
       objectReference: {fileID: 2133408903}
     - target: {fileID: 6717154039494398635, guid: 28f1c7beb808644f0b5a1ec4bd42deba, type: 3}
       propertyPath: health
-      value: 100000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6717154039494398635, guid: 28f1c7beb808644f0b5a1ec4bd42deba, type: 3}
       propertyPath: playerHeart
