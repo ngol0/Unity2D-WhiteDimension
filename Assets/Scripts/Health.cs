@@ -31,22 +31,26 @@ public class Health : MonoBehaviour
     public void ProcessHit(DamageDealer damage)
     {
         health -= damage.Damage;
-        Debug.Log(health);
+        //Debug.Log(health);
 
         //destroy bullet
         damage.Hit();
-
-        if (health <= 0)
-        {
-            DisplayHitAffect();
-            Destroy(this.gameObject);
-            OnDie?.Invoke();
-        }
+        ToDie();
 
         if (hasCameraShake && main != null)
         {
             cameraShake.Play();
             playerHeart.OnHeartLost(health);
+        }
+    }
+
+    private void ToDie()
+    {
+        if (health <= 0)
+        {
+            DisplayHitAffect();
+            Destroy(this.gameObject);
+            OnDie?.Invoke();
         }
     }
 

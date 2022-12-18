@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     // cache reference
     SpriteRenderer sprite;
     Coroutine firingCoroutine;
+    Health health;
 
 
     // Start is called before the first frame update
@@ -27,6 +28,9 @@ public class Player : MonoBehaviour
     {
 
         sprite = GetComponent<SpriteRenderer>();
+        health  = GetComponent<Health>();
+
+        if (health) health.OnDie += OnPlayerDie;
 
         //set boundary of space to move
         SetUpMoveSpace();
@@ -126,11 +130,9 @@ public class Player : MonoBehaviour
 
         if (damage != null)
         {
-            Health health = GetComponent<Health>();
             if (health)
             {
                 health.ProcessHit(damage);
-                health.OnDie += OnPlayerDie;
             }
         }      
     }

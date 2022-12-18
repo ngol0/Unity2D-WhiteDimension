@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,15 +10,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 10f;
 
+    [Header("UI")]
+    [SerializeField] Sprite onWinSprite;
+
     // for animation
     bool active = true;
     Animator animator;
 
     // cache ref
     SpriteRenderer spriteR;
-
-    // for shooting
-    public static bool wasShot = false;
+    Health health;
 
 
     // Start is called before the first frame update
@@ -31,13 +33,15 @@ public class Enemy : MonoBehaviour
 
         // sprite
         spriteR = GetComponent<SpriteRenderer>();
+        health = GetComponent<Health>();
 
+        if (health) health.OnDie += OnScore;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (wasShot) CountDownAndShoot();
+        if (GameManager.Instance.enemyStartShooting) CountDownAndShoot();
     }
     
     //----SHOOTING----//
@@ -94,13 +98,9 @@ public class Enemy : MonoBehaviour
         // animation of enemy when hit
         if (other.gameObject.tag == "Bullet")
         {
-
-            Health health = GetComponent<Health>();
-
             if (health)
             {
                 health.ProcessHit(damageDealer);
-                health.OnDie += OnScore;
             }
 
             if (active == true)
@@ -108,9 +108,7 @@ public class Enemy : MonoBehaviour
                 animator.SetBool("isHit", true);
                 StartCoroutine(ResetTarget());
                 active = false;
-            }  
-
-            wasShot = true;         
+            }      
         }      
     }
 
@@ -125,7 +123,6 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         animator.SetBool("isHit", false);
         active = true;
-
     }
 
 }

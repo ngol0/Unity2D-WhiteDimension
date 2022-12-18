@@ -37,7 +37,10 @@ public class EnemySpawner : MonoBehaviour
 
                 //set the wave to the enemy that gets spawn so that it knows which wave to follow
                 newEnemy.GetComponent<EnemyPath>().SetWaveConfig(wave);
-
+                if (GameManager.Instance.Win) 
+                {
+                    newEnemy.GetComponent<Animator>().enabled = false;
+                }
                 yield return new WaitForSeconds(wave.GetRandomSpawnTime());
             }      
     }

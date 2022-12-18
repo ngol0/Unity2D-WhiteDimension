@@ -29,12 +29,11 @@ public class UIHeart : MonoBehaviour
 
     public void OnHeartLost(int health)
     {
-        Debug.Log("::::heart lost");
         int currentHeart = (int)health / 100;
         var norDmg = numberOfHeart - currentHeart;
-        numberOfHeart = currentHeart;
         int heartToDestroy;
-        
+
+        numberOfHeart = currentHeart;
         heartToDestroy = (norDmg > transform.childCount) ? transform.childCount : norDmg;
 
         for (int i = 0; i < heartToDestroy; i++)
