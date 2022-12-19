@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bb09f4ac5d6474fb798f1edeee10b4, type: 3}
+  m_Name: StartingText
+  m_EditorClassIdentifier: 
+  textEntries:
+  - index: 0
+    textEntry: Welcome to White Space
+  - index: 1
+    textEntry: Entry 1
+  - index: 2
+    textEntry: Entry 2
