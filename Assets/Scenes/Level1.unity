@@ -659,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorSlider: {fileID: 1324685908}
   starfield: {fileID: 191828936}
-  percentOfScore: 0.5
+  percentOfScore: 0.02
   enemyStartShooting: 0
 --- !u!1 &1543219947
 GameObject:

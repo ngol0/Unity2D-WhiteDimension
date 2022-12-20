@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -13,36 +14,42 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] float timeBetweenWaves = 12f;
 
+    [SerializeField] TextEntryUI annoucementText;
+
     IEnumerator Start()
     {
+        GameManager.Instance.HasWin += TurnOffAnnoucement;
         do
         {
             //wait til all waves are spawn until do it all over again
             yield return StartCoroutine(SpawnAllWaves());
         } while (looping);
-        
     }
 
-        
+    void TurnOffAnnoucement()
+    {
+        var tmpro = annoucementText.GetComponent<TextMeshProUGUI>();
+        tmpro.enabled = false;
+    }
 
     private IEnumerator SpawnEnemy(WaveConfig wave)
     {
         for (int enemyCount = 1; enemyCount <= wave.numberOfEnemies; enemyCount++)
-            {
-                //instantiate new enemy from the wave config information
-                var newEnemy = Instantiate(
-                    wave.EnemyPrefab,
-                    wave.GetWaypoints()[startingIndex].transform.position,
-                    Quaternion.identity, transform);
+        {
+            //instantiate new enemy from the wave config information
+            var newEnemy = Instantiate(
+                wave.EnemyPrefab,
+                wave.GetWaypoints()[startingIndex].transform.position,
+                Quaternion.identity, transform);
 
-                //set the wave to the enemy that gets spawn so that it knows which wave to follow
-                newEnemy.GetComponent<EnemyPath>().SetWaveConfig(wave);
-                if (GameManager.Instance.Win) 
-                {
-                    newEnemy.GetComponent<Animator>().enabled = false;
-                }
-                yield return new WaitForSeconds(wave.GetRandomSpawnTime());
-            }      
+            //set the wave to the enemy that gets spawn so that it knows which wave to follow
+            newEnemy.GetComponent<EnemyPath>().SetWaveConfig(wave);
+            if (GameManager.Instance.Win)
+            {
+                newEnemy.GetComponent<Animator>().enabled = false;
+            }
+            yield return new WaitForSeconds(wave.GetRandomSpawnTime());
+        }
     }
 
 
@@ -56,10 +63,14 @@ public class EnemySpawner : MonoBehaviour
 
             //wait for one wave to terminate til the next wave
             yield return StartCoroutine(SpawnEnemy(currentWave));
+
+            annoucementText.SetUpText(new TextEntry("More shadows are coming"));
+            annoucementText.Show();
+            annoucementText.Animate();
+
             yield return new WaitForSeconds(timeBetweenWaves);
- 
         }
-        
+
     }
 
 }

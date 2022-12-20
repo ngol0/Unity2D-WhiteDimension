@@ -18,4 +18,13 @@ MonoBehaviour:
   - index: 1
     textEntry: In this space, if you don't fight, nothing will fight against you
   - index: 2
-    textEntry: 'The dark shadow won''t hurt you if you '
+    textEntry: As long as you neglect the dark shadows, they will not hurt you
+  - index: 3
+    textEntry: 'Killing the dark shadows will give you back the color, but also bring
+      you
+
+      fear and pain'
+  - index: 4
+    textEntry: 'So think carefully what you want: '
+  - index: 5
+    textEntry: A permanent escape in white space, or a bloody fight for color?

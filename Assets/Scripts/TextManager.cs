@@ -31,9 +31,10 @@ public class TextManager : MonoBehaviour
     {
         turnedTextOff = true;
 
-        if (IsLastEntry() && !isInGame)
+        if (IsLastEntry())
         {
-           StartCoroutine(StartScene());
+            if (isInGame) return;
+            StartCoroutine(StartScene());
         }
     }
 
