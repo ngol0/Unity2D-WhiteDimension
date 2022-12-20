@@ -17,15 +17,18 @@ public class GameManager : MonoBehaviour
     public bool enemyStartShooting = false;
     private bool isWin = false;
     public bool Win => isWin;
-    private void Awake() 
+    private void Awake()
     {
         Instance = this;
     }
-    
-    private void Start() 
+
+    private void Start()
     {
-        colorSlider.fillAmount = 0f;
-        starfield.SetActive(false);
+        if (colorSlider && starfield)
+        {
+            colorSlider.fillAmount = 0f;
+            starfield.SetActive(false);
+        }
     }
 
     public void OnGetScore()
@@ -58,7 +61,7 @@ public class GameManager : MonoBehaviour
     public void OnWin()
     {
         starfield.SetActive(true);
-        enemyStartShooting = false;  
+        enemyStartShooting = false;
         isWin = true;
         HasWin?.Invoke();
     }

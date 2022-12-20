@@ -13,7 +13,7 @@ public class TextManager : MonoBehaviour
 
     bool turnedTextOff = true;
 
-    private void Awake()
+    public void AddToQueue()
     {
         foreach (var entry in textData.textEntries)
         {
@@ -24,7 +24,6 @@ public class TextManager : MonoBehaviour
     private void OnEnable()
     {
         textEntryUI.OnTextHide += NextMove;
-
     }
 
     void NextMove()
@@ -40,7 +39,7 @@ public class TextManager : MonoBehaviour
     IEnumerator StartScene()
     {
         yield return new WaitForSeconds(0.8f);
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Level1");
     }
 
     void Update()
@@ -61,7 +60,7 @@ public class TextManager : MonoBehaviour
 
     IEnumerator ShowText()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         textEntryUI.Show();
         textEntryUI.Animate();
     }

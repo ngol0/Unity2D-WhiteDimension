@@ -45,4 +45,10 @@ public class TextEntryUI : MonoBehaviour
     {
         text.text = entry.textEntry;
     }
+
+    public void FadeOnClick()
+    {
+        text.DOFade(0, fadeDuration)
+            .OnComplete(Hide);
+    }
 }

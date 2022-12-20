@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bb09f4ac5d6474fb798f1edeee10b4, type: 3}
   m_Name: EndingText
   m_EditorClassIdentifier: 
-  textEntries: []
+  textEntries:
+  - index: 0
+    textEntry: Congratulations
+  - index: 1
+    textEntry: You have collected color for your life
