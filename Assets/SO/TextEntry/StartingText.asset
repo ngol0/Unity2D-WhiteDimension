@@ -16,6 +16,6 @@ MonoBehaviour:
   - index: 0
     textEntry: Welcome to White Space
   - index: 1
-    textEntry: Entry 1
+    textEntry: In this space, if you don't fight, nothing will fight against you
   - index: 2
-    textEntry: Entry 2
+    textEntry: 'The dark shadow won''t hurt you if you '

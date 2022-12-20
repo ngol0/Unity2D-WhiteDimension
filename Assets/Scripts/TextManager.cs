@@ -12,6 +12,7 @@ public class TextManager : MonoBehaviour
     Queue<TextEntry> textQueue = new Queue<TextEntry>();
 
     bool turnedTextOff = true;
+    [SerializeField] bool isInGame;
 
     public void AddToQueue()
     {
@@ -30,7 +31,7 @@ public class TextManager : MonoBehaviour
     {
         turnedTextOff = true;
 
-        if (IsLastEntry())
+        if (IsLastEntry() && !isInGame)
         {
            StartCoroutine(StartScene());
         }

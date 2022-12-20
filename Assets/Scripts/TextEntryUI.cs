@@ -12,8 +12,6 @@ public class TextEntryUI : MonoBehaviour
     [Header("Stats")]
     [SerializeField] float fadeTo = 1f;
     [SerializeField] float fadeDuration = 0.5f;
-    [SerializeField] float moveTo = 1f;
-    [SerializeField] float moveDuration = 1f;
     [SerializeField] float showTime = 1.5f;
 
     public System.Action OnTextHide;

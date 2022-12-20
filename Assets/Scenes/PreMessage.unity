@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textData: {fileID: 11400000, guid: dcb0fc12d7f3e6e4094d8c260921daaf, type: 2}
   textEntryUI: {fileID: 1887653667}
+  isInGame: 0
 --- !u!4 &153911210
 Transform:
   m_ObjectHideFlags: 0
@@ -242,54 +243,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5607998107367611088, guid: a15d502797c74488bb8722aa1350f79f, type: 3}
   m_PrefabInstance: {fileID: 5607998105481508953}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &846174367
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 846174370}
-  - component: {fileID: 846174369}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &846174369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846174367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 418213a6331a58a4f8e8a4ad87a6a35a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorSlider: {fileID: 0}
-  starfield: {fileID: 0}
-  percentOfScore: 0.01
-  enemyStartShooting: 0
---- !u!4 &846174370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846174367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324685906
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,14 +580,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: Welcome to White Space
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e9fa1ece732764741825dc43b461ff8e, type: 2}
+  m_sharedMaterial: {fileID: -352272088623541404, guid: e9fa1ece732764741825dc43b461ff8e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 0
   m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -652,13 +605,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -716,9 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1887653665}
   fadeTo: 1
-  fadeDuration: 0.5
-  moveTo: 0
-  moveDuration: 1
+  fadeDuration: 2
   showTime: 2
 --- !u!1 &1957833106
 GameObject:
