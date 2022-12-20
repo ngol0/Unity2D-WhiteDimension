@@ -1,19 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class TextManager : MonoBehaviour
 {
-   [SerializeField] TextSO textData;
+    [SerializeField] TextSO textData;
+    [SerializeField] TextEntryUI textEntryUI;
 
-   void ShowText()
-   {
+    Queue<TextEntry> textQueue = new Queue<TextEntry>();
 
-   }
+    bool turnedTextOff = true;
 
-   public void OnNextText()
-   {
+    private void Awake()
+    {
+        foreach (var entry in textData.textEntries)
+        {
+            textQueue.Enqueue(entry);
+        }
+    }
 
-   }
+    private void OnEnable()
+    {
+        textEntryUI.OnTextHide += NextMove;
+
+    }
+
+    void NextMove()
+    {
+        turnedTextOff = true;
+
+        if (IsLastEntry())
+        {
+           StartCoroutine(StartScene());
+        }
+    }
+
+    IEnumerator StartScene()
+    {
+        yield return new WaitForSeconds(0.8f);
+        SceneManager.LoadScene("Start");
+    }
+
+    void Update()
+    {
+        DequeueText();
+    }
+
+    private void DequeueText()
+    {
+        if (textQueue.Count > 0 && turnedTextOff)
+        {
+            var nextEntry = textQueue.Dequeue();
+            textEntryUI.SetUpText(nextEntry);
+            turnedTextOff = false;
+            StartCoroutine(ShowText());
+        }
+    }
+
+    IEnumerator ShowText()
+    {
+        yield return new WaitForSeconds(0.5f);
+        textEntryUI.Show();
+        textEntryUI.Animate();
+    }
+
+    private bool IsLastEntry()
+    {
+        return textQueue.Count == 0;
+    }
 }
