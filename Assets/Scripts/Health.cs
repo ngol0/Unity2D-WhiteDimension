@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
         damage.Hit();
         ToDie();
 
-        if (hasCameraShake && main != null)
+        if (hasCameraShake && main != null && !GameManager.Instance.Win)
         {
             cameraShake.Play();
             playerHeart.OnHeartLost(health);
@@ -46,7 +46,7 @@ public class Health : MonoBehaviour
 
     private void ToDie()
     {
-        if (health <= 0)
+        if (health <= 0 && !GameManager.Instance.Win)
         {
             DisplayHitAffect();
             Destroy(this.gameObject);
