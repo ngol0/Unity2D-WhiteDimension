@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textEntries:
   - index: 0
-    textEntry: Welcome to White Space
+    textEntry: Welcome to White Dimension
   - index: 1
-    textEntry: In this space, if you don't fight, nothing will fight against you
+    textEntry: In this dimension, if you don't fight, nothing will fight against
+      you
   - index: 3
     textEntry: "If you start fighting, \nfear and pain emerges"
   - index: 4
