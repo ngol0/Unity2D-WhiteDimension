@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     public bool enemyStartShooting = false;
     private bool isWin = false;
     public bool Win => isWin;
+
+    [Header("For debug and testing")]
+    [SerializeField] bool isTesting;
+    float percentToTest = 0.5f;
+
     private void Awake()
     {
         Instance = this;
@@ -33,7 +38,9 @@ public class GameManager : MonoBehaviour
 
     public void OnGetScore()
     {
-        colorSlider.fillAmount += percentOfScore;
+        if (isTesting) colorSlider.fillAmount += percentToTest;
+        else colorSlider.fillAmount += percentOfScore;
+        
         enemyStartShooting = true;
         if (IsWin())
         {

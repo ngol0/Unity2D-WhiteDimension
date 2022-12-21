@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpaceShip-anim
+  m_Name: new_spaceship
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 628566896, guid: 843120e61a579124397bd7f115d17184, type: 3}
+      value: {fileID: 1986308522017787878, guid: 82128c0763de34b0e8f8f37bcae5a197, type: 3}
     - time: 0.06666667
-      value: {fileID: -489508760, guid: 843120e61a579124397bd7f115d17184, type: 3}
+      value: {fileID: 8139676835993917388, guid: 82128c0763de34b0e8f8f37bcae5a197, type: 3}
     - time: 0.13333334
-      value: {fileID: -1669871547, guid: 843120e61a579124397bd7f115d17184, type: 3}
+      value: {fileID: 1942282409385587142, guid: 82128c0763de34b0e8f8f37bcae5a197, type: 3}
     - time: 0.2
-      value: {fileID: -1084015098, guid: 843120e61a579124397bd7f115d17184, type: 3}
+      value: {fileID: 2022249449024665313, guid: 82128c0763de34b0e8f8f37bcae5a197, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 628566896, guid: 843120e61a579124397bd7f115d17184, type: 3}
-    - {fileID: -489508760, guid: 843120e61a579124397bd7f115d17184, type: 3}
-    - {fileID: -1669871547, guid: 843120e61a579124397bd7f115d17184, type: 3}
-    - {fileID: -1084015098, guid: 843120e61a579124397bd7f115d17184, type: 3}
+    - {fileID: 1986308522017787878, guid: 82128c0763de34b0e8f8f37bcae5a197, type: 3}
+    - {fileID: 8139676835993917388, guid: 82128c0763de34b0e8f8f37bcae5a197, type: 3}
+    - {fileID: 1942282409385587142, guid: 82128c0763de34b0e8f8f37bcae5a197, type: 3}
+    - {fileID: 2022249449024665313, guid: 82128c0763de34b0e8f8f37bcae5a197, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

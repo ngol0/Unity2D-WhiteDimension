@@ -16,9 +16,8 @@ MonoBehaviour:
   - index: 0
     textEntry: Congratulations
   - index: 1
-    textEntry: You have collected color for your life
-  - index: 2
-    textEntry: through a constant fighting with darkness
+    textEntry: You have collected color for your life through a constant fighting
+      with darkness
   - index: 3
     textEntry: there's no guarantee that you won't be returned to white space later
   - index: 3

@@ -17,14 +17,13 @@ MonoBehaviour:
     textEntry: Welcome to White Space
   - index: 1
     textEntry: In this space, if you don't fight, nothing will fight against you
-  - index: 2
-    textEntry: As long as you neglect the dark shadows, they will not hurt you
   - index: 3
-    textEntry: 'Killing the dark shadows will give you back the color, but also bring
-      you
-
-      fear and pain'
+    textEntry: "If you start fighting, \nfear and pain emerges"
   - index: 4
+    textEntry: But killing darkness also will give you back the <color=#581845>c</color><color=#900C3F>o</color><color=#C70039>l</color><color=#FF5733>o</color><color=#FFC30F>r</color>
+  - index: 5
     textEntry: 'So think carefully what you want: '
   - index: 5
-    textEntry: A permanent escape in white space, or a bloody fight for color?
+    textEntry: A permanent escape in white space?
+  - index: 5
+    textEntry: or a bloody fight for <color=#581845>c</color><color=#900C3F>o</color><color=#C70039>l</color><color=#FF5733>o</color><color=#FFC30F>r</color>

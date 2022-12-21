@@ -237,6 +237,7 @@ MonoBehaviour:
   starfield: {fileID: 191828936}
   percentOfScore: 0.02
   enemyStartShooting: 0
+  isTesting: 0
 --- !u!1 &557259971
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dc4384f9f4d544cae43ce27d5f7f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textManager: {fileID: 0}
+  textManager: {fileID: 1727225332}
 --- !u!4 &742614568
 Transform:
   m_ObjectHideFlags: 0
@@ -389,7 +390,7 @@ MonoBehaviour:
   text: {fileID: 896029773}
   fadeTo: 1
   fadeDuration: 0.8
-  showTime: 1.5
+  showTime: 2
 --- !u!114 &896029773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +779,29 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   _image: {fileID: 1324685908}
+--- !u!1 &1330075224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7204643023306572031, guid: 28f1c7beb808644f0b5a1ec4bd42deba, type: 3}
+  m_PrefabInstance: {fileID: 7204643021821272731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1330075229 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7204643023306572030, guid: 28f1c7beb808644f0b5a1ec4bd42deba, type: 3}
+  m_PrefabInstance: {fileID: 7204643021821272731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1330075232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330075224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821d0b16f14ceb54a8dafa83ae3e4468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 1330075229}
 --- !u!1 &1458019252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1499,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7204643023306572029, guid: 28f1c7beb808644f0b5a1ec4bd42deba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 628566896, guid: 843120e61a579124397bd7f115d17184, type: 3}
     - target: {fileID: 7204643023306572031, guid: 28f1c7beb808644f0b5a1ec4bd42deba, type: 3}
       propertyPath: m_Name
       value: Player

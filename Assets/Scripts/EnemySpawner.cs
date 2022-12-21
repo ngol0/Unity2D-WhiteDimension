@@ -64,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
             //wait for one wave to terminate til the next wave
             yield return StartCoroutine(SpawnEnemy(currentWave));
 
-            annoucementText.SetUpText(new TextEntry("More shadows are coming"));
+            annoucementText.SetUpText(new TextEntry("Next wave is coming"));
             annoucementText.Show();
             annoucementText.Animate();
 

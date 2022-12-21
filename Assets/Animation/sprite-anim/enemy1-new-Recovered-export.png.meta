@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1526c7b04e7e26749bdc479b2ca4e81a
+guid: 45f23a2fb4decbf488a91133ae72576a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy1-Recovered-export_0
+      name: enemy1-new-Recovered-export_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2361b2771db2e244a7a2a34f31ab847
-      internalID: -186929174
+      spriteID: ec7d7e458e3423f48bbb2630b2f1c29d
+      internalID: -274072435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1-Recovered-export_1
+      name: enemy1-new-Recovered-export_1
       rect:
         serializedVersion: 2
         x: 240
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbd0ed7fa2ecf9247be9f1be4c2adbb2
-      internalID: -1117657494
+      spriteID: dedf03b7e0ae62846b59a634d26396cc
+      internalID: 1866515364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1-Recovered-export_2
+      name: enemy1-new-Recovered-export_2
       rect:
         serializedVersion: 2
         x: 480
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fda352f02d66b604bb1f95ce20dee726
-      internalID: 2026782652
+      spriteID: 48b923e2b9adb4e4cab9f914bc638ad9
+      internalID: -1523403192
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      enemy1-Recovered-export_0: -186929174
-      enemy1-Recovered-export_1: -1117657494
-      enemy1-Recovered-export_2: 2026782652
+      enemy1-new-Recovered-export_0: -274072435
+      enemy1-new-Recovered-export_2: -1523403192
+      enemy1-new-Recovered-export_1: 1866515364
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
